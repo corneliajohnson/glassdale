@@ -1,0 +1,11 @@
+.criminalsContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.criminal {
+  flex-basis: auto;
+  min-width: 20%;
+  border: black solid 1px;
+  padding: 1em;
+}
