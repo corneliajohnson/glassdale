@@ -2,22 +2,29 @@ import { getCriminals, useCriminals } from "./CriminalProvider.js";
 import { criminalListHTML } from "./Criminal.js";
 const eventHub = document.querySelector(".container");
 let criminalArray = [];
+
 // Listen for the custom event you dispatched in ConvictionSelect
 eventHub.addEventListener("crimeChosen", (event) => {
+  const crimeName = event.detail.crimeThatWasChosen;
   // You remembered to add the id of the crime to the event detail, right?
   if ("crimeId" in event.detail) {
-    /*
-          Filter the criminals application state down to the people that committed the crime
-      */
     const matchingCriminals = criminalArray.filter((matchingCriminal) => {
-      return matchingCriminal.conviction === event.detail.crimeThatWasChosen;
+      return matchingCriminal.conviction === crimeName;
     });
-
-    /*
-          Then invoke render() and pass the filtered collection as
-          an argument
-      */
     render(matchingCriminals);
+  }
+});
+
+// Listen for the custom event you dispatched in OfficerSelect
+eventHub.addEventListener("officerSelected", (event) => {
+  // How can you access the officer name that was selected by the user?
+  const officerName = event.detail.officer;
+
+  if ("officerId" in event.detail) {
+    const matchingOfficers = criminalArray.filter((criminal) => {
+      return criminal.arrestingOfficer === officerName;
+    });
+    render(matchingOfficers);
   }
 });
 

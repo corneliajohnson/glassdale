@@ -11,3 +11,11 @@
   padding: 1em;
   background-color: #fafafa;
 }
+
+.filters {
+  display: flex;
+}
+
+.filter {
+  margin: 1em;
+}
