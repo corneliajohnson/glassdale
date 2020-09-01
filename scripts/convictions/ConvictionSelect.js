@@ -11,17 +11,15 @@ export const ConvictionSelect = () => {
 };
 
 const render = (convictionsCollection) => {
-  const convictionsNamesArray = convictionsCollection.map((conviction) => {
-    const convictionInfo = conviction.name;
-    return convictionInfo;
-  });
-
   contentTarget.innerHTML = `
-  <select class="dropdown" id="crimeSelect">
-  <option value="0">Please select a crime...</option>
-  ${convictionsNamesArray
-    .map((conviction) => `<option value=${conviction}>${conviction}</option>`)
-    .sort()}
-</select>   
-  `;
+    <select class="dropdown" id="crimeSelect">
+    <option value="0">Please select a crime...</option>
+    ${convictionsCollection
+      .map(
+        (conviction) =>
+          `<option value=${conviction.name}>${conviction.name}</option>`
+      )
+      .sort()}
+  </select>   
+    `;
 };
