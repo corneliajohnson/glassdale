@@ -1,3 +1,13 @@
 {
-  "notes": []
+  "notes": [
+    {
+      "id": 1
+    },
+    {
+      "date": "2020-09-02",
+      "suspect": "Test",
+      "noteText": "Test",
+      "id": 2
+    }
+  ]
 }

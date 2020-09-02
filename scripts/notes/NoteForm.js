@@ -32,6 +32,7 @@ eventHub.addEventListener("click", (clickEvent) => {
       suspect: noteSuspect,
       noteText: noteText,
     };
+    debugger;
     // Change API state and application state
     saveNote(newNote);
   }
