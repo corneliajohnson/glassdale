@@ -1,5 +1,5 @@
-const notesArray = [];
 const eventHub = document.querySelector(".container");
+let notesArray = [];
 
 export const useNotes = () => {
   return notesArray.slice();
@@ -13,7 +13,7 @@ const dispatchStateChangeEvent = () => {
 
 export const getNotes = () => {
   return fetch("http://localhost:8088/notes")
-    .then((response) => response.json)
+    .then((response) => response.json())
     .then((parsedNotes) => {
       notesArray = parsedNotes;
     });

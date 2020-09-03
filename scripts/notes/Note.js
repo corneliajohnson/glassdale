@@ -1,7 +1,6 @@
 export const Note = (noteObj) => {
   return `
-  <p>${noteObj.date}</p>
-  <p>${noteObj.suspect}</p>
-  <p>${noteObj.noteText}</p>
+  <p> ${noteObj.date}: <strong>${noteObj.suspect}</strong>  -  ${noteObj.noteText}</p>
+  <hr>
   `;
 };

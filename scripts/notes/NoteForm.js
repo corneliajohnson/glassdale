@@ -19,7 +19,6 @@ const render = (criminalArray) => {
       </select> <br><br>
         <textarea type="text" id="note-text" rows="4" cols="50"></textarea><br><br>
         <button id="saveNote">Save Note</button>
-        <div id="noteList"></div>
         </form>
     `);
 };
@@ -40,7 +39,7 @@ eventHub.addEventListener("click", (clickEvent) => {
 
     if (noteCriminal.value !== 0) {
       const newNote = {
-        date: Date.now(),
+        date: new Date(Date.now()).toGMTString(),
         suspect: noteCriminal,
         noteText: noteText,
       };
