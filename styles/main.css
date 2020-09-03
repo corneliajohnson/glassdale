@@ -1,4 +1,11 @@
+#note--form {
+  border: solid black 1px;
+  width: 65%;
+  text-align: center;
+  padding: 2em;
+}
 .criminalsContainer {
+  align-content: center;
   display: flex;
   flex-wrap: wrap;
 }

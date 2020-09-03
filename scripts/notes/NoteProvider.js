@@ -19,6 +19,7 @@ export const getNotes = () => {
     });
 };
 
+//add a note to the database
 export const saveNote = (note) => {
   return fetch("http://localhost:8088/notes", {
     method: "POST",

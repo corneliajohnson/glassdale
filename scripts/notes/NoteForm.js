@@ -1,39 +1,51 @@
 import { saveNote } from "./NoteProvider.js";
+import { getCriminals, useCriminals } from "../criminals/CriminalProvider.js";
 const contentTarget = document.querySelector(".noteFormContainer");
 const eventHub = document.querySelector(".container");
 
-const render = () => {
+const render = (criminalArray) => {
   return (contentTarget.innerHTML = `
-        <form>
-        <label for="noteDate">Date:</label>
-        <input type="date" id="noteDate" name="date"><br>
+        <form id="note--form">
+        <h2>Notes</h2>
         <label for="noteSuspect">Suspect</label>
-        <input type="text" id="noteSuspect" name="suspect"><br>
-        <textarea type="text" id="note-text" rows="4" cols="50"></textarea><br>
+        <select id="noteCriminal" class="dropdown">
+        <option  value="0">Please select a crime...</option>
+        ${criminalArray
+          .map(
+            (criminal) =>
+              `<option  value="${criminal.name}">${criminal.name}</option>`
+          )
+          .sort()}
+      </select> <br><br>
+        <textarea type="text" id="note-text" rows="4" cols="50"></textarea><br><br>
         <button id="saveNote">Save Note</button>
+        <div id="noteList"></div>
         </form>
     `);
 };
 
 export const NoteForm = () => {
-  render();
+  getCriminals().then(() => {
+    render(useCriminals());
+  });
 };
 
 // Handle browser-generated click event in component
 eventHub.addEventListener("click", (clickEvent) => {
   if (clickEvent.target.id === "saveNote") {
-    // Make a new object representation of a note
-    const noteDate = document.getElementById("noteDate").value;
-    const noteSuspect = document.getElementById("noteSuspect").value;
+    event.preventDefault();
+
+    const noteCriminal = document.querySelector("#noteCriminal").value;
     const noteText = document.getElementById("note-text").value;
-    const newNote = {
-      // Key/value pairs here
-      date: noteDate,
-      suspect: noteSuspect,
-      noteText: noteText,
-    };
-    debugger;
-    // Change API state and application state
-    saveNote(newNote);
+
+    if (noteCriminal.value !== 0) {
+      const newNote = {
+        date: Date.now(),
+        suspect: noteCriminal,
+        noteText: noteText,
+      };
+      // Change API state and application state
+      saveNote(newNote);
+    }
   }
 });
