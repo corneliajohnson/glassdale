@@ -4,6 +4,15 @@
   text-align: center;
   padding: 2em;
 }
+#noteList {
+  margin: 2em;
+  padding: 1em;
+  background-color: #fafafa;
+  width: 110px;
+  height: 110px;
+  overflow: auto;
+  width: 75%;
+}
 .criminalsContainer {
   align-content: center;
   display: flex;

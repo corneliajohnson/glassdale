@@ -5,8 +5,8 @@ let notesArray = [];
 const render = (theNoteArray) => {
   const noteListUI = document.getElementById("noteList");
   noteListUI.innerHTML = `
-  <h3>Previous Notes</h3
-    ${theNoteArray.map((note) => Note(note)).join("")}
+  <h3>Previous Notes</h3>
+<div>${theNoteArray.map((note) => Note(note)).join("")}</div>
   `;
 };
 

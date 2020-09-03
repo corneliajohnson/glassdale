@@ -1,39 +1,10 @@
 {
   "notes": [
     {
-      "suspect": "Abigayle Hayes",
-      "noteText": "This is a test",
-      "id": 1
-    },
-    {
-      "date": "1599158130387",
-      "suspect": "Aron Purdy",
-      "noteText": "Second Test",
-      "id": 2
-    },
-    {
-      "date": "Thu Sep 03 2020 14:37:39 GMT-0400 (Eastern Daylight Time)",
+      "date": "Thu, 03 Sep 2020 18:50:16 GMT",
       "suspect": "Arne Hills",
-      "noteText": "Test Test",
-      "id": 3
-    },
-    {
-      "date": "Thu Sep 03 2020",
-      "suspect": "Abelardo Reilly",
-      "noteText": "New Test",
-      "id": 4
-    },
-    {
-      "date": "Thu, 03 Sep 2020 18:42:53 GMT",
-      "suspect": "Adah Rolfson",
-      "noteText": "New Note Here",
-      "id": 5
-    },
-    {
-      "date": "Thu, 03 Sep 2020 18:43:16 GMT",
-      "suspect": "Alek Hane",
-      "noteText": "New note Here",
-      "id": 6
+      "noteText": "Was at the store at 12:00",
+      "id": 1
     }
   ]
 }
