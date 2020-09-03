@@ -13,17 +13,24 @@
   overflow: auto;
   width: 75%;
 }
+#criminal-and-associate {
+  display: flex;
+}
 .criminalsContainer {
   align-content: center;
   display: flex;
   flex-wrap: wrap;
+}
+.associateContainer {
+  padding: 2em;
+  width: 100%;
 }
 
 .criminal {
   flex-basis: auto;
   min-width: 20%;
   border: black solid 1px;
-  margin: 1em;
+  margin: 0.5em;
   padding: 1em;
   background-color: #fafafa;
 }
