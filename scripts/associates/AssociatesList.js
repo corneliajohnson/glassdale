@@ -14,7 +14,7 @@ eventHub.addEventListener("click", (clickEvent) => {
 
 const render = (theAssoicatesArray, theCrimalName) => {
   const associateContainer = document.querySelector(".associateContainer");
-  associateContainer.innerHTML = `<h3>Assocciate(s) of ${theCrimalName}</h3>`;
+  associateContainer.innerHTML = `<h2>Assocciate(s) of ${theCrimalName}</h2>`;
   associateContainer.innerHTML += `${theAssoicatesArray
     .map(
       (associate) =>
