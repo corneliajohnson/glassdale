@@ -13,7 +13,7 @@ CriminalList();
 ConvictionSelect();
 OfficerSelect();
 WitnessButton();
-//NoteList();
+NoteList();
 AssociatesList();
 AssociatesButton();
 WitnessList();
