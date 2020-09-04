@@ -3,13 +3,11 @@ const eventHub = document.querySelector(".container");
 let associatesArray = [];
 let criminalArray = [];
 
-eventHub.addEventListener("click", (clickEvent) => {
-  if (clickEvent.target.id.includes("associates")) {
-    const [prefix, associateID] = clickEvent.target.id.split("--");
-    const associates = criminalArray[associateID - 1].known_associates;
-    const criminalName = criminalArray[associateID - 1].name;
-    render(associates, criminalName);
-  }
+eventHub.addEventListener("selectedAssociate", (clickEvent) => {
+  const associateID = clickEvent.detail.associate;
+  const associates = criminalArray[associateID].known_associates;
+  const criminalName = criminalArray[associateID - 1].name;
+  render(associates, criminalName);
 });
 
 const render = (theAssoicatesArray, theCrimalName) => {

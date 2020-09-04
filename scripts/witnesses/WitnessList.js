@@ -6,13 +6,11 @@ let witnessArray = [];
 // Listen for the custom event you dispatched in OfficerSelect
 eventHub.addEventListener("witnessessSelected", (event) => {
   // How can you access the officer name that was selected by the user?
-  const witnessBtnID = event.detail.witness;
 
   if ("witnessId" in event.detail) {
     const matchingWitness = witnessArray.map((witness) => {
       return witness;
     });
-    console.log(matchingWitness);
     render(matchingWitness);
   }
 });
