@@ -5,11 +5,13 @@ import { NoteForm } from "./notes/NoteForm.js";
 import { NoteList } from "./notes/NoteList.js";
 import { AssociatesList } from "./associates/AssociatesList.js";
 import { WitnessList } from "./witnesses/WitnessList.js";
+import { WitnessButton } from "./witnesses/WitnessButton.js";
 
 NoteForm();
 CriminalList();
 ConvictionSelect();
 OfficerSelect();
-NoteList();
+WitnessButton();
+//NoteList();
 AssociatesList();
 WitnessList();
