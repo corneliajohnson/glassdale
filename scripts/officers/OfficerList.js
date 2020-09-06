@@ -4,11 +4,11 @@ import { officersHTML } from "./Officers.js";
 export const OfficerList = () => {
   getOfficers().then(() => {
     const officerArray = useOfficers();
-    addOfficersToDOM(officerArray);
+    render(officerArray);
   });
 };
 
-const addOfficersToDOM = (theOfficerArray) => {
+const render = (theOfficerArray) => {
   const officersContainer = document.querySelector(".officersContainer");
   officersContainer.innerHTML = "<h1>Officers</h1>";
   return theOfficerArray.map((officer) => {
