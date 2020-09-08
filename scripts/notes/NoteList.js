@@ -2,6 +2,7 @@ import { getNotes, useNotes } from "./NoteProvider.js";
 import { Note } from "./Note.js";
 import { NoteForm } from "./NoteForm.js";
 let notesArray = [];
+NoteForm();
 
 const render = (theNoteArray) => {
   const noteListUI = document.getElementById("noteList");
@@ -17,5 +18,4 @@ export const NoteList = () => {
     notesArray = useNotes();
     render(notesArray);
   });
-  NoteForm();
 };
