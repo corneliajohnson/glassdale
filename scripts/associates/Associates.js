@@ -1,7 +1,5 @@
 export const Associates = (associateObj) => {
   return `
-  <p>
-  <strong>Name: ${associateObj.name}</strong> - Aibli: ${associateObj.alibi}
-  </p>
+  <h4> ${associateObj.name}</h4> Aibli: ${associateObj.alibi}
   `;
 };
