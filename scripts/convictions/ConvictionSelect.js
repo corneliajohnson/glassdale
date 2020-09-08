@@ -35,6 +35,7 @@ const render = (convictionsCollection) => {
     `;
 };
 
+//called in CriminalList.js
 export const ConvictionSelect = () => {
   getConvictions().then(() => {
     const convictions = useConvictions();

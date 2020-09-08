@@ -16,4 +16,5 @@ eventHub.addEventListener("click", (clickEvent) => {
 });
 
 //required for eventlistener above to be found
+//called in AssociateList.js
 export const AssociatesButton = () => {};

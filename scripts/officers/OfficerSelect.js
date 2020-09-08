@@ -3,6 +3,7 @@ const contentTarget = document.querySelector(".filters__officer");
 const eventHub = document.querySelector(".container");
 let officersArray = [];
 
+//called in CriminalList.js
 export const OfficerSelect = () => {
   getOfficers().then(() => {
     officersArray = useOfficers();

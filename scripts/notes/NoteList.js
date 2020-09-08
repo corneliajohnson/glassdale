@@ -1,5 +1,6 @@
 import { getNotes, useNotes } from "./NoteProvider.js";
 import { Note } from "./Note.js";
+import { NoteForm } from "./NoteForm.js";
 let notesArray = [];
 
 const render = (theNoteArray) => {
@@ -16,4 +17,5 @@ export const NoteList = () => {
     notesArray = useNotes();
     render(notesArray);
   });
+  NoteForm();
 };

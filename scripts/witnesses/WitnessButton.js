@@ -15,4 +15,6 @@ eventHub.addEventListener("click", (clickEvent) => {
   }
 });
 
+//required for eventlistener above to be found
+////called in WitnessList.js
 export const WitnessButton = () => {};

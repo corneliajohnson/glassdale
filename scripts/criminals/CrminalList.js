@@ -1,5 +1,7 @@
 import { getCriminals, useCriminals } from "./CriminalProvider.js";
 import { criminalListHTML } from "./Criminal.js";
+import { OfficerSelect } from "../officers/OfficerSelect.js";
+import { ConvictionSelect } from "../convictions/ConvictionSelect.js";
 const eventHub = document.querySelector(".container");
 let criminalArray = [];
 
@@ -41,4 +43,6 @@ export const CriminalList = () => {
     criminalArray = useCriminals();
     render(criminalArray);
   });
+  OfficerSelect();
+  ConvictionSelect();
 };

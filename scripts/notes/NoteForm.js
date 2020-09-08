@@ -23,6 +23,7 @@ const render = (criminalArray) => {
     `);
 };
 
+//called in NoteList.js
 export const NoteForm = () => {
   getCriminals().then(() => {
     render(useCriminals());
