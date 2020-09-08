@@ -18,10 +18,13 @@ eventHub.addEventListener("witnessessSelected", (event) => {
 
 const render = (theWitnessArray) => {
   const witnessListHTML = document.getElementById("witnessList");
-  witnessListHTML.innerHTML = "";
-  return theWitnessArray.map((witness) => {
-    witnessListHTML.innerHTML += Witness(witness);
-  });
+  if (witnessListHTML.innerHTML === "") {
+    return theWitnessArray.map((witness) => {
+      witnessListHTML.innerHTML += Witness(witness);
+    });
+  } else {
+    witnessListHTML.innerHTML = "";
+  }
 };
 
 // Render ALL criminals initally
