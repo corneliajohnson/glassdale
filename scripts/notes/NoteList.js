@@ -11,7 +11,7 @@ const render = (theNoteArray) => {
   `;
 };
 
-// Render ALL criminals initally
+// Render ALL notes initally
 export const NoteList = () => {
   getNotes().then(() => {
     notesArray = useNotes();
