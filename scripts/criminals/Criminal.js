@@ -1,3 +1,4 @@
+import { AlibiDialog } from "../associates/AssociatesList.js";
 export const criminalListHTML = (criminalObj) => {
   return `
   <div class = "criminal" id="criminal-${criminalObj.id}">
@@ -11,6 +12,7 @@ export const criminalListHTML = (criminalObj) => {
     "en-US"
   )}</p>
   <button id="associates--${criminalObj.id}">Associate Alibis</button>
+  ${AlibiDialog(criminalObj.id)}
   </div>
   `;
 };

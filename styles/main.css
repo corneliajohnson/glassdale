@@ -31,7 +31,8 @@
 
 .criminal {
   flex-basis: auto;
-  min-width: 20%;
+  min-width: 25%;
+  max-width: 25%;
   border: black solid 1px;
   margin: 0.5em;
   padding: 1em;

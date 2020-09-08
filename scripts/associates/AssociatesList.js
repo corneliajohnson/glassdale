@@ -1,28 +1,28 @@
 import { useCriminals, getCriminals } from "../criminals/CriminalProvider.js";
+import { Associates } from "./Associates.js";
 const eventHub = document.querySelector(".container");
 let associatesArray = [];
 let criminalArray = [];
 
 eventHub.addEventListener("selectedAssociate", (clickEvent) => {
   const associateID = clickEvent.detail.associate;
-  const associates = criminalArray[associateID].known_associates;
-  const criminalName = criminalArray[associateID - 1].name;
-  render(associates, criminalName);
+  const associates = criminalArray[associateID - 1].known_associates;
+  render(associates, associateID);
 });
 
-const render = (theAssoicatesArray, theCrimalName) => {
-  const associateContainer = document.querySelector(".associateContainer");
-  associateContainer.innerHTML = `<h2>Assocciate(s) of ${theCrimalName}</h2>`;
-  associateContainer.innerHTML += `${theAssoicatesArray
-    .map(
-      (associate) =>
-        `<div class="associate">
-        <p><strong>Name: ${associate.name}</strong> - Aibli: ${associate.alibi}</p>
-        </div>
-        `
-    )
-    .join("")}`;
+const render = (theAssoicatesArray, associateID) => {
+  const targetContent = document.querySelector(`.alibiDialog--${associateID}`);
+  targetContent.innerHTML = theAssoicatesArray
+    .map((associate) => {
+      return Associates(associate);
+    })
+    .join("");
   return theAssoicatesArray;
+};
+
+export const AlibiDialog = (criminalID) => {
+  return `
+  <div class="alibiDialog--${criminalID}"></div>`;
 };
 
 export const AssociatesList = () => {
