@@ -22,12 +22,12 @@ const render = (theWitnessArray) => {
     return theWitnessArray.map((witness) => {
       witnessListHTML.innerHTML += Witness(witness);
       crimialContainer.style.visibility = "hidden";
-      witnessBtn.innerHTML = "Hide Witnesses";
+      witnessBtn.innerHTML = "See Criminals";
     });
   } else {
     witnessListHTML.innerHTML = "";
     crimialContainer.style.visibility = "visible";
-    witnessBtn.innerHTML = "See Criminals";
+    witnessBtn.innerHTML = "See Witnesses";
   }
 };
 

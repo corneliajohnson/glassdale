@@ -19,13 +19,12 @@
   flex-wrap: wrap;
 }
 
-.witnessList {
+#witnessList {
   display: flex;
-  flex-flow: row;
+  flex-wrap: wrap;
 }
 
-.associateContainer,
-.witnessContainer {
+.associateContainer {
   padding: 2em;
   width: 50%;
   margin: 0;
