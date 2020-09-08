@@ -1,6 +1,4 @@
-import { getWitnesses, useWitnesses } from "./WitnessProvider.js";
 const eventHub = document.querySelector(".container");
-let witnessArray = [];
 
 // Handle browser-generated click event in component
 eventHub.addEventListener("click", (clickEvent) => {
@@ -17,8 +15,4 @@ eventHub.addEventListener("click", (clickEvent) => {
   }
 });
 
-export const WitnessButton = () => {
-  getWitnesses().then(() => {
-    witnessArray = useWitnesses();
-  });
-};
+export const WitnessButton = () => {};
