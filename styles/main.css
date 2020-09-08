@@ -18,18 +18,21 @@
   display: flex;
   flex-wrap: wrap;
 }
-.associate-witness {
+
+.witnessList {
   display: flex;
+  flex-flow: row;
 }
+
 .associateContainer,
 .witnessContainer {
   padding: 2em;
   width: 50%;
-  border: black 1px solid;
   margin: 0;
 }
 
-.criminal {
+.criminal,
+.witness {
   flex-basis: auto;
   min-width: 25%;
   max-width: 25%;
