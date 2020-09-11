@@ -11,6 +11,8 @@ eventHub.addEventListener("crimeChosen", (event) => {
   // You remembered to add the id of the crime to the event detail, right?
   if ("crimeId" in event.detail) {
     const matchingCriminals = criminalArray.filter((matchingCriminal) => {
+      document.querySelector(".filters__crime").classList.remove("disabled");
+      document.querySelector(".filters__officer").classList.add("disabled");
       return matchingCriminal.conviction === crimeName;
     });
     render(matchingCriminals);
@@ -24,6 +26,8 @@ eventHub.addEventListener("officerSelected", (event) => {
 
   if ("officerId" in event.detail) {
     const matchingOfficers = criminalArray.filter((criminal) => {
+      document.querySelector(".filters__crime").classList.add("disabled");
+      document.querySelector(".filters__officer").classList.remove("disabled");
       return criminal.arrestingOfficer === officerName;
     });
     render(matchingOfficers);
