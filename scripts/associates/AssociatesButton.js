@@ -14,7 +14,3 @@ eventHub.addEventListener("click", (clickEvent) => {
     eventHub.dispatchEvent(customEvent);
   }
 });
-
-//required for eventlistener above to be found
-//called in AssociateList.js
-export const AssociatesButton = () => {};

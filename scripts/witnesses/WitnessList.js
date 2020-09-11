@@ -1,6 +1,6 @@
 import { getWitnesses, useWitnesses } from "./WitnessProvider.js";
 import { Witness } from "./Witness.js";
-import { WitnessButton } from "./WitnessButton.js";
+import "./WitnessButton.js";
 const eventHub = document.querySelector(".container");
 let crimialContainer = document.querySelector(".criminalsContainer");
 let witnessArray = [];
@@ -36,5 +36,4 @@ export const WitnessList = () => {
   getWitnesses().then(() => {
     witnessArray = useWitnesses();
   });
-  WitnessButton();
 };

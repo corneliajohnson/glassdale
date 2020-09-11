@@ -1,6 +1,6 @@
 import { useCriminals, getCriminals } from "../criminals/CriminalProvider.js";
 import { Associates } from "./Associates.js";
-import { AssociatesButton } from "./AssociatesButton.js";
+import "./AssociatesButton.js";
 const eventHub = document.querySelector(".container");
 let criminalArray = [];
 
@@ -35,5 +35,4 @@ export const AssociatesList = () => {
   getCriminals().then(() => {
     criminalArray = useCriminals();
   });
-  AssociatesButton();
 };

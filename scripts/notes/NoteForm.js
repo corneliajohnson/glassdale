@@ -33,7 +33,7 @@ export const NoteForm = () => {
 // Handle browser-generated click event in component
 eventHub.addEventListener("click", (clickEvent) => {
   if (clickEvent.target.id === "saveNote") {
-    event.preventDefault();
+    clickEvent.preventDefault();
 
     const noteCriminal = document.querySelector("#noteCriminal").value;
     const noteText = document.getElementById("note-text").value;
