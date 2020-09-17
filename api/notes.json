@@ -1,34 +1,10 @@
 {
   "notes": [
     {
-      "date": "Thu, 03 Sep 2020 18:50:16 GMT",
-      "suspect": "Arne Hills",
-      "noteText": "Was at the store at 12:00",
-      "id": 1
-    },
-    {
-      "date": "Tue, 08 Sep 2020 18:34:11 GMT",
-      "suspect": "Alberta Raynor",
-      "noteText": "Never Mention going to the bank",
-      "id": 2
-    },
-    {
-      "date": "Tue, 08 Sep 2020 18:35:47 GMT",
-      "suspect": "Montana Howe",
-      "noteText": "Confirmed she was creating cups out of styrofoam",
+      "date": "Thu, 17 Sep 2020 15:31:12 GMT",
+      "suspectId": 14,
+      "noteText": "Sup",
       "id": 3
-    },
-    {
-      "date": "Tue, 08 Sep 2020 18:38:00 GMT",
-      "suspect": "Carey Boyer",
-      "noteText": "Alibi did not match",
-      "id": 4
-    },
-    {
-      "date": "Tue, 08 Sep 2020 18:38:47 GMT",
-      "suspect": "Burdette Gleason",
-      "noteText": "Note Test",
-      "id": 5
     }
   ]
 }

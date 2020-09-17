@@ -13,7 +13,7 @@ const render = (criminalArray) => {
         ${criminalArray
           .map(
             (criminal) =>
-              `<option  value="${criminal.name}">${criminal.name}</option>`
+              `<option  value="${criminal.id}">${criminal.name}</option>`
           )
           .sort()}
       </select> <br><br>
@@ -35,13 +35,13 @@ eventHub.addEventListener("click", (clickEvent) => {
   if (clickEvent.target.id === "saveNote") {
     clickEvent.preventDefault();
 
-    const noteCriminal = document.querySelector("#noteCriminal").value;
+    const criminalId = document.querySelector("#noteCriminal").value;
     const noteText = document.getElementById("note-text").value;
 
     if (noteCriminal.value !== 0) {
       const newNote = {
         date: new Date(Date.now()).toGMTString(),
-        suspect: noteCriminal,
+        suspectId: parseInt(criminalId),
         noteText: noteText,
       };
       // Change API state and application state
