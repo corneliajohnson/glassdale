@@ -1,6 +1,6 @@
-export const Note = (noteObj) => {
+export const Note = (noteObj, criminalObj) => {
   return `
-  <p> ${noteObj.date}: <strong>${noteObj.suspectId}</strong>  -  ${noteObj.noteText}</p>
+  <p> ${noteObj.date}: <strong>${criminalObj.name}</strong>  -  ${noteObj.noteText}</p>
   <hr>
   `;
 };

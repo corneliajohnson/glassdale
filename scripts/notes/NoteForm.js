@@ -35,13 +35,13 @@ eventHub.addEventListener("click", (clickEvent) => {
   if (clickEvent.target.id === "saveNote") {
     clickEvent.preventDefault();
 
-    const criminalId = document.querySelector("#noteCriminal").value;
+    const criminal = document.querySelector("#noteCriminal").value;
     const noteText = document.getElementById("note-text").value;
 
     if (noteCriminal.value !== 0) {
       const newNote = {
         date: new Date(Date.now()).toGMTString(),
-        suspectId: parseInt(criminalId),
+        criminalId: parseInt(criminal),
         noteText: noteText,
       };
       // Change API state and application state
