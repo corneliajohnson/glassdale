@@ -7,7 +7,6 @@ export const useNotes = () => {
 
 const dispatchStateChangeEvent = () => {
   const noteStateChangedEvent = new CustomEvent("noteStateChanged");
-
   eventHub.dispatchEvent(noteStateChangedEvent);
 };
 
