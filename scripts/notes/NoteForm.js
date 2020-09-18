@@ -5,7 +5,7 @@ const eventHub = document.querySelector(".container");
 
 const render = (criminalArray) => {
   return (contentTarget.innerHTML = `
-        <form id="note--form">
+        <div id="note--form">
         <h2>Notes</h2>
         <label for="noteSuspect">Suspect</label>
         <select id="noteCriminal" class="dropdown">
@@ -18,8 +18,8 @@ const render = (criminalArray) => {
           .sort()}
       </select> <br><br>
         <textarea type="text" id="note-text" rows="4" cols="50"></textarea><br><br>
-        <button type="button" id="saveNote">Save Note</button>
-        </form>
+        <button id="saveNote">Save Note</button>
+        </div>
     `);
 };
 
@@ -34,8 +34,6 @@ export const NoteForm = () => {
 eventHub.addEventListener("click", (clickEvent) => {
   clickEvent.preventDefault();
   if (clickEvent.target.id === "saveNote") {
-    clickEvent.preventDefault();
-
     const criminal = document.querySelector("#noteCriminal").value;
     const noteText = document.getElementById("note-text").value;
 
