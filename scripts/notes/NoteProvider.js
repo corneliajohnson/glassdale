@@ -31,3 +31,12 @@ export const saveNote = (note) => {
     .then(getNotes)
     .then(dispatchStateChangeEvent);
 };
+
+//delete note
+export const deleteNote = (noteId) => {
+  return fetch(`http://localhost:8088/notes/${noteId}`, {
+    method: "DELETE",
+  })
+    .then(getNotes)
+    .then(dispatchStateChangeEvent);
+};

@@ -18,7 +18,7 @@ const render = (criminalArray) => {
           .sort()}
       </select> <br><br>
         <textarea type="text" id="note-text" rows="4" cols="50"></textarea><br><br>
-        <button id="saveNote">Save Note</button>
+        <button type="button" id="saveNote">Save Note</button>
         </form>
     `);
 };
@@ -32,6 +32,7 @@ export const NoteForm = () => {
 
 // Handle browser-generated click event in component
 eventHub.addEventListener("click", (clickEvent) => {
+  clickEvent.preventDefault();
   if (clickEvent.target.id === "saveNote") {
     clickEvent.preventDefault();
 
