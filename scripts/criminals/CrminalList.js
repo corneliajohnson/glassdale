@@ -2,7 +2,14 @@ import { getCriminals, useCriminals } from "./CriminalProvider.js";
 import { criminalListHTML } from "./Criminal.js";
 import { OfficerSelect } from "../officers/OfficerSelect.js";
 import { ConvictionSelect } from "../convictions/ConvictionSelect.js";
+import { getFacilities, useFacilities } from "../facility/FacilityProvider.js";
+import {
+  getCriminalFacilities,
+  useCriminalFacilities,
+} from "../facility/CriminalFacilityProvider.js";
 const eventHub = document.querySelector(".container");
+let facilitiesArray = [];
+let crimFacArray = [];
 let criminalArray = [];
 
 // Listen for the custom event you dispatched in ConvictionSelect
@@ -15,7 +22,7 @@ eventHub.addEventListener("crimeChosen", (event) => {
       document.querySelector(".filters__officer").classList.add("disabled");
       return matchingCriminal.conviction === crimeName;
     });
-    render(matchingCriminals);
+    render(matchingCriminals, facilitiesArray, crimFacArray);
   }
 });
 
@@ -30,23 +37,44 @@ eventHub.addEventListener("officerSelected", (event) => {
       document.querySelector(".filters__officer").classList.remove("disabled");
       return criminal.arrestingOfficer === officerName;
     });
-    render(matchingOfficers);
+    render(matchingOfficers, facilitiesArray, crimFacArray);
   }
 });
 
-const render = (theCriminalArray) => {
+const render = (theCriminalArray, theFacilitiesArray, theCrimFacArray) => {
   const criminalsContainer = document.querySelector(".criminalsContainer");
-  criminalsContainer.innerHTML = `
-    ${theCriminalArray.map((criminal) => criminalListHTML(criminal)).join("")}
-  `;
+  criminalsContainer.innerHTML = theCriminalArray
+    .map((criminalObject) => {
+      // Step 2 - Filter all relationships to get only ones for this criminal
+      const facilityRelationshipsForThisCriminal = theCrimFacArray.filter(
+        (cf) => cf.criminalId === criminalObject.id
+      );
+
+      // Step 3 - Convert the relationships to facilities with map()
+      const facilities = facilityRelationshipsForThisCriminal.map((cf) => {
+        const matchingFacilityObject = theFacilitiesArray.find(
+          (facility) => facility.id === cf.facilityId
+        );
+        return matchingFacilityObject;
+      });
+
+      // Must pass the matching facilities to the Criminal component
+      return criminalListHTML(criminalObject, facilities);
+    })
+    .join("");
 };
 
 // Render ALL criminals initally
 export const CriminalList = () => {
-  getCriminals().then(() => {
-    criminalArray = useCriminals();
-    render(criminalArray);
-  });
+  getFacilities()
+    .then(getCriminalFacilities)
+    .then(getCriminals)
+    .then(() => {
+      facilitiesArray = useFacilities();
+      crimFacArray = useCriminalFacilities();
+      criminalArray = useCriminals();
+      render(criminalArray, facilitiesArray, crimFacArray);
+    });
   OfficerSelect();
   ConvictionSelect();
 };
