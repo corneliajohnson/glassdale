@@ -4,7 +4,7 @@ import { AssociatesList } from "./associates/AssociatesList.js";
 import { WitnessList } from "./witnesses/WitnessList.js";
 import { DisplayFacilitiesButton } from "./facility/DisplayFacilitiesButton.js";
 import { FacilityList } from "./facility/FacilityList.js";
-
+import "./notes/EditNotesForm.js";
 CriminalList();
 NoteList();
 AssociatesList();

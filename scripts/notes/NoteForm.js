@@ -18,7 +18,9 @@ const render = (criminalArray) => {
           .sort()}
       </select> <br><br>
         <textarea type="text" id="note-text" rows="4" cols="50"></textarea><br><br>
+        <div id="noteBtn">
         <button id="saveNote">Save Note</button>
+        <div>
         </div>
     `);
 };
@@ -31,7 +33,7 @@ export const NoteForm = () => {
 };
 
 eventHub.addEventListener("click", (clickEvent) => {
-  if (clickEvent.target.id.startsWith("deleteNote--")) {
+  if (clickEvent.target.id.startsWith("editNote--")) {
     const [perfix, noteId] = clickEvent.target.id.split("--");
     const customEvent = new CustomEvent("editSelected", {
       detail: {
