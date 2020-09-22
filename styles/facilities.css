@@ -1,0 +1,9 @@
+.facility {
+  flex-basis: auto;
+  min-width: 25%;
+  max-width: 25%;
+  border: black solid 1px;
+  margin: 0.5em;
+  padding: 1em;
+  background-color: #93e9be;
+}

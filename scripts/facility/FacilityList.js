@@ -39,7 +39,7 @@ const render = (theFacilityArray) => {
       .join("");
     crimialContainer.style.visibility = "hidden";
     facilityButton.innerHTML =
-      '<button id="facilityBtn">Hide Facilities</button>';
+      '<button id="facilityBtn">Display Criminals</button>';
   } else {
     contentTarget.innerHTML = "";
     crimialContainer.style.visibility = "visible";

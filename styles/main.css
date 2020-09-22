@@ -1,3 +1,5 @@
+@import "./facilities.css";
+
 #note--form {
   border: solid black 1px;
   width: 65%;
@@ -13,7 +15,8 @@
   overflow: auto;
   width: 75%;
 }
-.criminalsContainer {
+.criminalsContainer,
+.facilityContainer {
   align-content: center;
   display: flex;
   flex-wrap: wrap;
@@ -38,7 +41,14 @@
   border: black solid 1px;
   margin: 0.5em;
   padding: 1em;
-  background-color: #fafafa;
+}
+
+.criminal {
+  background-color: #ff5eaa;
+}
+
+.witness {
+  background-color: #75daff;
 }
 
 .filters {

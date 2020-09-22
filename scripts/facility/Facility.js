@@ -1,6 +1,6 @@
 export const Facility = (facilityObj, criminalFacilitiesArray) => {
   return `
-  <div class ="criminal" id="criminal-${facilityObj.id}">
+  <div class ="facility" id="facility-${facilityObj.id}">
   <h3>${facilityObj.facilityName}</h3>
   <p>Security Level: ${facilityObj.securityLevel}</p>
   <p>Capacity: ${facilityObj.capacity}</p>
