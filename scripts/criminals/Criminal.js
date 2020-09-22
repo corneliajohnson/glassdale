@@ -12,7 +12,7 @@ export const criminalListHTML = (criminalObj, facilityObj) => {
     "en-US"
   )}</p>
   <div>
-  <h2>Facilities</h2>
+  <h4>Facilities</h4>
   <ul>
       ${facilityObj.map((f) => `<li>${f.facilityName}</li>`).join("")}
   </ul>
