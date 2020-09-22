@@ -1,19 +1,27 @@
 import { Facility } from "./Facility.js";
 import { getFacilities, useFacilities } from "./FacilityProvider.js";
+import {
+  getCriminalFacilities,
+  useCriminalFacilities,
+} from "./CriminalFacilityProvider.js";
 
 const eventHub = document.querySelector(".container");
 let facilityArray = [];
+let criminalFacilitiesArray = [];
 
 eventHub.addEventListener("facilitiesButtonClicked", (event) => {
   if ("facilitiesBtnSelected" in event.detail) {
-    render(facilityArray);
+    render(facilityArray, criminalFacilitiesArray);
   }
 });
 
 export const FacilityList = () => {
-  getFacilities().then(() => {
-    facilityArray = useFacilities();
-  });
+  getFacilities()
+    .then(getCriminalFacilities)
+    .then(() => {
+      facilityArray = useFacilities();
+      criminalFacilitiesArray = useCriminalFacilities();
+    });
 };
 
 const render = (theFacilityArray) => {
@@ -23,7 +31,10 @@ const render = (theFacilityArray) => {
   if (contentTarget.innerHTML === "") {
     contentTarget.innerHTML = theFacilityArray
       .map((facility) => {
-        return Facility(facility);
+        const matchingCriminals = criminalFacilitiesArray.filter(
+          (criminal) => criminal.facilityId === facility.id
+        );
+        return Facility(facility, matchingCriminals);
       })
       .join("");
     crimialContainer.style.visibility = "hidden";

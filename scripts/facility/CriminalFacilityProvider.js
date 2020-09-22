@@ -5,7 +5,9 @@ export const useCriminalFacilities = () => {
 };
 
 export const getCriminalFacilities = () => {
-  return fetch("https://criminals.glassdale.us/criminalFacilities")
+  return fetch(
+    "https://criminals.glassdale.us/criminalFacilities?_expand=criminal"
+  )
     .then((response) => response.json())
     .then((apiData) => {
       criminalFacilities = apiData;
