@@ -39,3 +39,21 @@ export const deleteNote = (noteId) => {
     .then(getNotes)
     .then(dispatchStateChangeEvent);
 };
+
+export const getSingleNote = (id) => {
+  return fetch(`http://localhost:8088/notes/${id}`).then((response) =>
+    response.json()
+  );
+};
+
+export const getUpdatedNote = (noteObj, id) => {
+  return fetch(`http://localhost:8088/notes/${id}`, {
+    method: "Put",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(noteObj),
+  })
+    .then(getNotes)
+    .then(dispatchStateChangeEvent);
+};

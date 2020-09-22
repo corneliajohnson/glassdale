@@ -30,6 +30,18 @@ export const NoteForm = () => {
   });
 };
 
+eventHub.addEventListener("click", (clickEvent) => {
+  if (clickEvent.target.id.startsWith("deleteNote--")) {
+    const [perfix, noteId] = clickEvent.target.id.split("--");
+    const customEvent = new CustomEvent("editSelected", {
+      detail: {
+        noteEntryId: noteId,
+      },
+    });
+    eventHub.dispatchEvent(customEvent);
+  }
+});
+
 // Handle browser-generated click event in component
 eventHub.addEventListener("click", (clickEvent) => {
   clickEvent.preventDefault();
